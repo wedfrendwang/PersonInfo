@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="PersonInfo"
+  id="myeclipse.1489459994414"
+  context-root="/PersonInfo"
+  j2ee-spec="6.0"
+  archive="PersonInfo.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
