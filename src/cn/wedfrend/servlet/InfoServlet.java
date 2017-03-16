@@ -66,21 +66,25 @@ public class InfoServlet implements Servlet{
 		os.print("</title>");
 		os.print("</head>");
 		os.print("<body>");
-		os.print("<table align='center' width='80%'>");
+		os.print("<h1 align='center' width='80%'>");
+		os.print("wedfrend hobby");
+		os.print("</h1><br/>");
+		os.print("<hr/>");
+		os.print("<table border='1' align='center' width='80%'>");
 		os.print("<tr>");
-		os.print("<td>");
+		os.print("<td title='wedfrend hobby' align='center'>");
 		os.print("爱好");
 		os.print("</td>");
-		os.print("<td>");
+		os.print("<td align='center'>");
 		os.print("热爱程度");
 		os.print("</td>");
 		os.print("</tr>");
 		for (HobyCategory hobyCategory : list) {
 			os.print("<tr>");
-			os.print("<td>");
+			os.print("<td align='center'>");
 			os.print(hobyCategory.getHoby());
 			os.print("</td>");
-			os.print("<td>");
+			os.print("<td align='center'>");
 			os.print(hobyCategory.getLevel());
 			os.print("</td>");
 			os.print("</tr>");
@@ -88,6 +92,8 @@ public class InfoServlet implements Servlet{
 		os.print("</table>");
 		os.print("</body>");
 		os.print("</html>");
+		os.flush();
+		os.close();
 	}
 
 }
