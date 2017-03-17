@@ -6,8 +6,10 @@
 	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
   <display-name></display-name>
   <servlet>
+  
     <servlet-name>LoadServlet</servlet-name>
     <servlet-class>cn.wedfrend.servlet.LoadServlet</servlet-class>
+    <load-on-startup>0</load-on-startup>
   </servlet>
 
   <servlet-mapping>
