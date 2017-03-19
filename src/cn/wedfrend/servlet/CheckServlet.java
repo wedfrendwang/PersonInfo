@@ -15,7 +15,6 @@ public class CheckServlet extends GenericServlet{
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		ServletOutputStream Out =  res.getOutputStream();
-		Out.print("Ok");
 	}
 	
 

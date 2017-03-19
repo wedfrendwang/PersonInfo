@@ -52,6 +52,10 @@ public class RelationServlet extends HttpServlet{
 		out.print("<td>");
 		out.print("录入日期");
 		out.print("</td>");
+		
+		out.print("<td>");
+		out.print("操作");
+		out.print("</td>");
 		out.print("</tr>");
 		if(listRelation!=null)
 		for (int i = 0; i < listRelation.size(); i++) {
@@ -77,6 +81,11 @@ public class RelationServlet extends HttpServlet{
 			//listRelation.get(i).getDate().toLocaleString()过期
 			out.print(new SimpleDateFormat("yyyy-MM-dd").format(listRelation.get(i).getDate()));
 			out.print("</td>");
+			
+			out.print("<td>");
+			out.print("<a href='update?id="+listRelation.get(i).getId()+"'>修改</a>   <a href='del?id="+listRelation.get(i).getId()+"'>删除</a>");
+			out.print("</td>");
+			
 			out.print("</tr>");
 		}
 		out.print("</table>");

@@ -53,10 +53,8 @@ public class LoadServlet extends HttpServlet {
 		out.print("<small>总有几段场景</small>，其中的每幅画面，你都愿意拿全部的力量去铭记<br/>");
 		out.print("<strong>总有几<sub>颗泪</sub>，其中的每一次<sup>抽泣</sup>，你都愿意拿满手的承诺去代替</strong><br/>");
 		out.print("/p");
-		out.print("<a href='info'><h5>wedfrend CSDN link</h5></a>");
+		out.print("<a href='my.html'><h5>wedfrend CSDN link</h5></a>");
 		out.print("<hr/>");
-		
-		
 //		author(out);
 		out.print("<hr/>");
 		out.print("    This is ");
@@ -66,6 +64,7 @@ public class LoadServlet extends HttpServlet {
 		out.println("</HTML>");
 		out.flush();
 		out.close();
+		
 	}
 	
 	

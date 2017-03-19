@@ -1,24 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>my.html</title>
-<meta charset="utf-8">
-<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-<meta http-equiv="description" content="this is my page">
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <head>
+    <title>my.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
 
-<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
-
-</head>
-
-<body>
-	This is my HTML page.
-	<br>
-	<form action="load" method="get">
-		用户名: <input type="text" name="name"><br /> 
-		密 码: <input type="password" name="psw"><br />
-		<textarea rows="5" cols="10" name="txarea"></textarea>
-		<br/> <input type="submit" value="submit"><br />
-	</form>
-</body>
+  </head>
+  
+  <body>
+    This is my HTML page. <br>
+    
+    <form action="my" method="post">
+    
+    	用户名：<input type="text" name="name"/><br/>
+    	性    别：<input type="radio" name="sex" value="male" checked/>男
+    	<input type="radio" name="sex",value="female"/>女<br/>
+    	学    历：<select name="xueli">
+    	<option value="中学">中学</option>
+    	<option value="大学">大学</option>
+    	<option value="硕士">硕士</option>
+    	<option value="博士">博士</option>
+    	</select><br/>
+    	爱    好：<input type="checkbox" value="music" name="hobbies"/>音乐
+    	<input type="checkbox" value="movie" name="hobbies"/>电影
+    	<input type="checkbox" value="game" name="hobbies"/>游戏
+    	<input type="checkbox" value="sport" name="hobbies"/>运动<br/> 
+    	所看书籍：<select name="books" multiple="multiple">
+    	<option value="java">java</option>
+    	<option value="jsp">jsp</option>
+    	<option value="oracle">oracle</option>
+    	<option value="c#">c#</option>
+    	</select><br/>
+    	自我介绍:<textarea name="introduce" rows="10" ,class="6"></textarea>
+    	<input type="submit" value="提交"/>
+    </form>
+    
+  </body>
 </html>
