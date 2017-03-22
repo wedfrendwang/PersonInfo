@@ -19,20 +19,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
   </head>
+  <script type="text/javascript">
+    function toVaild(){
+    
+    var a = document.getElementById("name").value;
+    if(a==""){
+    alert("请输入姓名");
+    return false;
+    }
+    var pass = document.getElementById("pass").value;
+    if(pass==""){
+    alert("请输入密码");
+    return false;
+    }
+    return true;
+    }
+  
+  </script>
+  
   
   <body>
     This is my JSP page. <br>
     
-    <form action="load" method="get">
+    <form action="load" method="get" onsubmit="return toVaild()">
     
     用户名:
-    <input type="text" name="name"><br/>
+    <input type="text" name="name" id="name" placeholder="用户名/邮箱/手机号" /><br/>
     密	码:
-    <input type="password" name="psw" ><br/>
-    
-    <input type="text" name="file" size="50">
-    
-    <input type="submit" value="submit" ><br/>
+    <input type="password" name="psw" id="pass" placeholder="密码"/><br/>
+    <input type="submit" value="submit" /><br/>
     
     </form>
     

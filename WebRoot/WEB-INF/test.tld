@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+version="2.0"
+>
+ <tlib-version>1.0</tlib-version>
+ <jsp-version>1.2</jsp-version>
+ <short-name>mine</short-name>
+ <uri>DiceFunctions</uri>
+ <function>
+ <name>rollIt</name>
+ <function-class>cn.wedfrend.category.DiceRooler</function-class>
+ <function-signature>
+ int rollDice()
+ </function-signature>
+ 
+ </function>
+ <function>
+ <name>getName</name>
+ <function-class>cn.wedfrend.category.DiceRooler</function-class>
+ <function-signature>
+ String getName()
+ </function-signature>
+ </function>
+</taglib>

@@ -40,30 +40,32 @@ public class LoadServlet extends HttpServlet {
 
 		response.setContentType("text/html charset='utf-8'");
 		response.setCharacterEncoding("utf-8");
-		PrintWriter out = response.getWriter();
-		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
-		out.println("<HTML>");
-		out.println("  <HEAD><TITLE>wedfrend introduction</TITLE></HEAD>");
-		out.println("  <BODY>");
-		out.print("<h1 width='80%' align='center'>welcome to wedfrend webpage!</h1><hr/> ");
-		out.print("<p width='80%' align='right'>");
-		out.print("<b>所有人的坚强，都是柔软生的茧</b><br/>");
-		out.print("<big>总有几分钟，其中的每一秒，你都愿意拿一年去换取</big><br/>");
-		out.print("总有<em>几句话</em>，其中的每个字眼，你都愿意拿所有的<i>夜晚</i>去复习<br/>");
-		out.print("<small>总有几段场景</small>，其中的每幅画面，你都愿意拿全部的力量去铭记<br/>");
-		out.print("<strong>总有几<sub>颗泪</sub>，其中的每一次<sup>抽泣</sup>，你都愿意拿满手的承诺去代替</strong><br/>");
-		out.print("/p");
-		out.print("<a href='my.html'><h5>wedfrend CSDN link</h5></a>");
-		out.print("<hr/>");
-//		author(out);
-		out.print("<hr/>");
-		out.print("    This is ");
-		out.print(this.getClass());
-		out.println(", using the   "+request.getMethod()+"   method");
-		out.println("  </BODY>");
-		out.println("</HTML>");
-		out.flush();
-		out.close();
+		
+		request.getRequestDispatcher("example.jsp").forward(request, response);
+//		PrintWriter out = response.getWriter();
+//		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
+//		out.println("<HTML>");
+//		out.println("  <HEAD><TITLE>wedfrend introduction</TITLE></HEAD>");
+//		out.println("  <BODY>");
+//		out.print("<h1 width='80%' align='center'>welcome to wedfrend webpage!</h1><hr/> ");
+//		out.print("<p width='80%' align='right'>");
+//		out.print("<b>所有人的坚强，都是柔软生的茧</b><br/>");
+//		out.print("<big>总有几分钟，其中的每一秒，你都愿意拿一年去换取</big><br/>");
+//		out.print("总有<em>几句话</em>，其中的每个字眼，你都愿意拿所有的<i>夜晚</i>去复习<br/>");
+//		out.print("<small>总有几段场景</small>，其中的每幅画面，你都愿意拿全部的力量去铭记<br/>");
+//		out.print("<strong>总有几<sub>颗泪</sub>，其中的每一次<sup>抽泣</sup>，你都愿意拿满手的承诺去代替</strong><br/>");
+//		out.print("/p");
+//		out.print("<a href='my.html'><h5>wedfrend CSDN link</h5></a>");
+//		out.print("<hr/>");
+////		author(out);
+//		out.print("<hr/>");
+//		out.print("    This is ");
+//		out.print(this.getClass());
+//		out.println(", using the   "+request.getMethod()+"   method");
+//		out.println("  </BODY>");
+//		out.println("</HTML>");
+//		out.flush();
+//		out.close();
 		
 	}
 	
