@@ -16,7 +16,7 @@ public class BaseDao {
 	 * 获得链接
 	 */
 	private void getConnection(){
-		//加载驱动
+		//加载驱动com.mysql.jdbc.Driver.class
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			String url="jdbc:mysql://localhost:3306/wedfrendinfo";
@@ -90,6 +90,12 @@ public class BaseDao {
 		return -1;
 	}
 
+	/**
+	 * 查询
+	 * @param sql
+	 * @param ob
+	 * @return
+	 */
 	public ResultSet executeQuery(String sql,Object...ob){
 		try {
 			this.getConnection();
@@ -105,7 +111,7 @@ public class BaseDao {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} 
+		} //这里不能关闭，这里关闭之后那么你的rs也被直接关闭了
 		return null;
 	}
 }

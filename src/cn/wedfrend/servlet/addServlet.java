@@ -48,7 +48,6 @@ public class addServlet extends HttpServlet{
 		//添加书籍
 		if(relationDAO.add(relation)>0){
 //			resp.getWriter().print("success");
-			
 			//重定向
 			resp.sendRedirect("relation");
 		}else{

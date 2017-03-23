@@ -5,8 +5,19 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
   <display-name></display-name>
-  <servlet>
+  <!-- 全局配置文件 -->
+  <context-param>
+  <param-name>wang</param-name>
+  <param-value>xiaobo</param-value>
+  </context-param>
   
+  <context-param>
+  <param-name>xiao</param-name>
+  <param-value>bo</param-value>
+  </context-param>
+  
+  
+  <servlet>
     <servlet-name>LoadServlet</servlet-name>
     <servlet-class>cn.wedfrend.servlet.LoadServlet</servlet-class>
     <load-on-startup>0</load-on-startup>
@@ -66,6 +77,6 @@
   
   
   <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>load.jsp</welcome-file>
   </welcome-file-list>
 </web-app>

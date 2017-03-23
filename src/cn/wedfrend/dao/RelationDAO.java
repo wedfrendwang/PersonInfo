@@ -1,6 +1,5 @@
 package cn.wedfrend.dao;
 
-import java.awt.print.Book;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -46,6 +45,11 @@ public class RelationDAO extends BaseDao{
 	}
 	
 	
+	/**
+	 * 查询数据列表
+	 * @param id
+	 * @return
+	 */
 	public Relation getRelationById(int id){
 		String sql="select * from relation where id=?";
 		try {
@@ -63,11 +67,21 @@ public class RelationDAO extends BaseDao{
 	
 	}
 	
+	/**
+	 * 跟新数据列表
+	 * @param relation
+	 * @return
+	 */
 	public int update(Relation relation){
 		String sql = "update relation set name=?,hobby=?,level=?,date=? where id=?";
 		return this.executUpdate(sql, relation.getName(),relation.getHobby(),relation.getLevel(),new SimpleDateFormat("yyyy-MM-dd").format(relation.getDate()),relation.getId());
 	}
 	
+	/**
+	 * 删除数据列表
+	 * @param id
+	 * @return
+	 */
 	public int del(int id){
 		String sql = "delete from relation where id=?";
 		return this.executUpdate(sql, id);
