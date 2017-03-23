@@ -15,13 +15,12 @@
   <param-name>xiao</param-name>
   <param-value>bo</param-value>
   </context-param>
-  
   <filter>
-  <filter-name>fister</filter-name>
-  <filter-class>cn.wedfrend.filter.FirstFilter</filter-class>
+  <filter-name>third</filter-name>
+  <filter-class>cn.wedfrend.filter.ContextFilter</filter-class>
   </filter>
   <filter-mapping>
-  <filter-name>fister</filter-name>
+  <filter-name>third</filter-name>
   <url-pattern>/*</url-pattern>
   </filter-mapping>
   
@@ -33,6 +32,18 @@
   <filter-name>second</filter-name>
   <url-pattern>/*</url-pattern>
   </filter-mapping>
+  
+  <filter>
+  <filter-name>fister</filter-name>
+  <filter-class>cn.wedfrend.filter.FirstFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  <filter-name>fister</filter-name>
+  <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  
+  
   
   
   

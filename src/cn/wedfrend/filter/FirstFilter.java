@@ -34,11 +34,19 @@ public class FirstFilter implements Filter{
 		System.out.println("getRequestURI"+req.getRequestURI());
 		System.out.println("getRequestURL"+req.getRequestURL());
 		
+		
+		
 		if(req.getSession().getAttribute("name") == null){
-			resp.sendRedirect("load.jsp");
-		}else{
-			chain.doFilter(request, response);
+			//截取
+			String path = req.getRequestURL().substring(req.getRequestURL().lastIndexOf("/")+1);
+			//放过谁
+			if(!("load.jsp".equals(path)||"loads".equals(path)||"resign.html".equals(path)||"resign".equals(path))){
+				resp.sendRedirect("load.jsp");
+				return;
+			}
 		}
+		chain.doFilter(request, response);
+		
 		//执行下一个Filter，没有就算了
 		System.out.println("doFilter 后");
 	}
