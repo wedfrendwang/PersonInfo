@@ -50,7 +50,9 @@ List<Relation> list = relationDAO.getAllRelation();
   		return;
   	}
   	%> --%>
-      欢迎你<%=session.getAttribute("name") %>
+  	
+     <%--  欢迎你<%=session.getAttribute("name") %> --%>
+      <h1>welcome ${name}</h1>
   <table align="center" width="80%">
 
 		<tr>

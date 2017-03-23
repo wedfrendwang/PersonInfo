@@ -27,12 +27,6 @@ public class IndexServlet extends HttpServlet{
 		//解决乱码
 		req.setCharacterEncoding("utf-8");
 		
-		//判断用户是否是登陆的状态
-		if(req.getSession().getAttribute("name")==null){
-			resp.sendRedirect("index.jsp");
-			return;
-		}
-		
 		String name = req.getParameter("name");
 		name = new String(name.getBytes("iso-8859-1"), "utf-8");
 		String psw = req.getParameter("psw");

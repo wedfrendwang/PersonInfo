@@ -16,6 +16,25 @@
   <param-value>bo</param-value>
   </context-param>
   
+  <filter>
+  <filter-name>fister</filter-name>
+  <filter-class>cn.wedfrend.filter.FirstFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  <filter-name>fister</filter-name>
+  <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+  <filter-name>second</filter-name>
+  <filter-class>cn.wedfrend.filter.SecondFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  <filter-name>second</filter-name>
+  <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  
   
   <servlet>
     <servlet-name>LoadServlet</servlet-name>
@@ -77,6 +96,6 @@
   
   
   <welcome-file-list>
-    <welcome-file>load.jsp</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
 </web-app>

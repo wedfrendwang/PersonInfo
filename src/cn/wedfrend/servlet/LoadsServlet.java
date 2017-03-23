@@ -2,6 +2,7 @@ package cn.wedfrend.servlet;
 
 import java.io.IOException;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -43,7 +44,13 @@ public class LoadsServlet extends HttpServlet{
 		user us = new user(name, pass);
 		us = userDAO.getUser(us);
 		if(us!=null){//说明登陆成功，并返回数据库中该用户的信息数据
-			
+			ServletContext sc = this.getServletContext();
+			if(sc.getAttribute("count") == null){
+				sc.setAttribute("count",1);
+			}else{
+				int count = (Integer) sc.getAttribute("count");
+				sc.setAttribute("count",++count);
+			}
 			//向session中存储区值
 			HttpSession httpSession = req.getSession();
 			httpSession.setAttribute("name", us.getName());//我们该用户的名字存入session
@@ -55,8 +62,8 @@ public class LoadsServlet extends HttpServlet{
 			Cookie cookie2 = new Cookie("psw", us.getPws());
 			cookie2.setMaxAge(10*60);
 			resp.addCookie(cookie2);
-			//这些存储完成之后，那么我们现在应该做跳转
-			resp.sendRedirect("indexs.jsp");
+			//这些存储完成之后，那么我们现在应该做跳转,这里有一个session的name
+			resp.sendRedirect("load");
 			
 		}else{
 			//说明查询数据库失败，那么有可能没有该用户的信息，或者登录名或密码错误
