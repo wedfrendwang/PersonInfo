@@ -47,6 +47,8 @@ public class ContextFilter implements Filter{
 				if("get".equals(this.getMethod().toLowerCase())){//ת��ΪСд
 					
 					String value = super.getParameter(name);
+					System.out.println("value------"+value);
+					if(value!=null)
 					try {
 						return new String(value.getBytes("iso-8859-1"), "utf-8");
 					} catch (UnsupportedEncodingException e) {

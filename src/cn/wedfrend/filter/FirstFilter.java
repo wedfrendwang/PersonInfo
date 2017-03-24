@@ -46,7 +46,6 @@ public class FirstFilter implements Filter{
 			}
 		}
 		chain.doFilter(request, response);
-		
 		//执行下一个Filter，没有就算了
 		System.out.println("doFilter 后");
 	}

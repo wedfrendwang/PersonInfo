@@ -107,7 +107,7 @@ public class BaseDao {
 					ps.setObject(i+1, ob[i]);
 				}
 			}
-			return rs = ps.executeQuery();
+			return rs = ps.executeQuery();//ºÜÓÐ½²¾¿
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

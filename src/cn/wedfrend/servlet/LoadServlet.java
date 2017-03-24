@@ -87,6 +87,7 @@ public class LoadServlet extends HttpServlet {
 		out.print("<a href='context'><h5>进入聊天室</h5></a>");
 		out.print("<a href='relation'><h5>爱好列表</h5></a>");
 		out.print("<a href='mylist.jsp'><h5>爱好列表jsp</h5></a>");
+		out.print("<a href='books'><h5>书籍列表</h5></a>");
 //		author(out);
 		out.print("<hr/>");
 		out.print("    This is ");
