@@ -42,13 +42,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	<td>日期</td>
     	<td>操作方式</td>
     	</tr>
-    	<c:forEach items="${list }" var="bean">
-    	<tr <c:if test="${bean.index%2==0 }">style="background:#0f0"</c:if> >
+    	<c:forEach items="${list }" var="bean" varStatus="status">
+    	
+    	<tr <c:if test="${status.index%2==0 }">style="background:#0f0;"</c:if>>
     	<td>${bean.id }</td>
     	<td>${bean.name }</td>
     	<%-- <td>${bean.categoryId }</td> --%>
     	
-    	<td><c:forEach items="${category }" var="cbean">
+    	<td><c:forEach items="${category }" var="cbean" >
     	<c:if test="${cbean.id eq bean.categoryId }">${cbean.category }</c:if></c:forEach></td>
     	
     	<td>${bean.author }</td>

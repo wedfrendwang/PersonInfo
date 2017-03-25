@@ -58,13 +58,13 @@ public class LoadServlet extends HttpServlet {
 			for (int i = 0; i < cookies.length; i++) {
 				System.out.println("cookies[i].getName()-------"+cookies[i].getName());
 				System.out.println("cookies[i].getValue()------"+cookies[i].getValue());
-				
 			}
 		}
 		//从session中取值
 		HttpSession session = request.getSession();
 		
 		String name = (String)session.getAttribute("name");
+		
 		PrintWriter out = response.getWriter();
 		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
 		out.println("<HTML>");
@@ -83,11 +83,13 @@ public class LoadServlet extends HttpServlet {
 		
 		
 		
-		out.print("<a href='my.html'><h5>wedfrend CSDN link</h5></a>");
+		out.print("<a href='my.html'><h5>"+name+" CSDN link</h5></a>");
 		out.print("<a href='context'><h5>进入聊天室</h5></a>");
 		out.print("<a href='relation'><h5>爱好列表</h5></a>");
 		out.print("<a href='mylist.jsp'><h5>爱好列表jsp</h5></a>");
 		out.print("<a href='books'><h5>书籍列表</h5></a>");
+		out.print("<a href='upload1.jsp'><h5>上传图片资源</h5></a>");
+		out.print("<a href='download.jsp'><h5>下载资源</h5></a>");
 //		author(out);
 		out.print("<hr/>");
 		out.print("    This is ");
@@ -97,7 +99,6 @@ public class LoadServlet extends HttpServlet {
 		out.println("</HTML>");
 		out.flush();
 		out.close();
-
 		
 	}
 	

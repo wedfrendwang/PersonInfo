@@ -45,7 +45,7 @@
 	
   </head>
   
-  <body>
+  <body bgcolor="#ccc">
   
   
   <%-- java脚本
@@ -64,11 +64,8 @@
   		}
 	}
 	%> --%>
-  
-  
-  
-  
-  
+    <img src="http://localhost:8080/PersonInfo/upload/8943adfb-8d0a-4ab6-bc3e-02bc8b01f052.jpg" width="100%" height="150px"/>
+  <center>
     <form action="loads" method="post" onsubmit="return toVaild()">		
     用户名: <input type="text" name="name" id="name" placeholder="用户名/邮箱/手机号" value="${ empty cookie.name.value?'':cookie.name.value }"/><br /><br /> 
     密    码: <input type="password" name="psw" id="pass" placeholder="密码" value="${ empty cookie.psw.value?'':cookie.psw.value }"/><br /><br /> 
@@ -77,5 +74,6 @@
 	</form>
 	<br/>
 	<a href='resign.html'>没有账号！点击注册</a>
+	</center>
   </body>
 </html>

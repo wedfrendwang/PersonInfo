@@ -34,10 +34,12 @@ public class ResignServlet extends HttpServlet{
 		case 1:
 			resp.getWriter().print("注册失败");
 			resp.getWriter().print("<a href='resign.html'>点击注册</a>");
+			resp.getWriter().print("<br/><a href='load.jsp'>点击登陆</a>");
 			break;
 		case 2:
 			resp.getWriter().print("用户名已存在，请重新注册<br/>");
 			resp.getWriter().print("<a href='resign.html'>点击注册</a>");
+			resp.getWriter().print("<br/><a href='load.jsp'>点击登陆</a>");
 			break;
 		default:
 			break;

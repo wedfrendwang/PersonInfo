@@ -33,7 +33,9 @@ public class FirstFilter implements Filter{
 		System.out.println("getContextPath"+req.getContextPath());
 		System.out.println("getRequestURI"+req.getRequestURI());
 		System.out.println("getRequestURL"+req.getRequestURL());
-		
+		String httpPath = req.getRequestURL().substring(0,req.getRequestURL().lastIndexOf("/"));
+
+		System.out.println("httpPath"+httpPath);
 		
 		
 		if(req.getSession().getAttribute("name") == null){
