@@ -3,6 +3,7 @@ package cn.wedfrend.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -10,6 +11,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
 
 import cn.wedfrend.category.Relation;
 import cn.wedfrend.dao.RelationDAO;
@@ -21,12 +24,24 @@ public class RelationServlet extends HttpServlet{
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//获取到符合java的数据 格式
+		/*
+		 * 1.ajax
+		 */
 		List<Relation> listRelation = relationDAO.getAllRelation();
-		resp.setCharacterEncoding("utf-8");
-		resp.setContentType("text/html;charset=utf-8");
-		//现在的servlet只需要做流程控制
-		req.setAttribute("list", listRelation);
-		req.getRequestDispatcher("list.jsp").forward(req, resp);
+		System.out.println(listRelation);
+		String op = req.getParameter("op");
+		System.out.println(op);
+		if("1".equals(op)){
+			requestJson(req,resp,listRelation);
+			
+		}else if(op==null){
+			requestJSP(req,resp,listRelation);
+		}
+		
+		
+		
+		
+		
 		
 //		PrintWriter out = resp.getWriter();
 //		out.print("<html>");
@@ -100,6 +115,36 @@ public class RelationServlet extends HttpServlet{
 		
 	}
 	
+	private void requestJSP(HttpServletRequest req, HttpServletResponse resp,
+			List<Relation> listRelation) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		resp.setCharacterEncoding("utf-8");
+		resp.setContentType("text/html;charset=utf-8");
+		//现在的servlet只需要做流程控制
+		req.setAttribute("list", listRelation);
+		req.getRequestDispatcher("list.jsp").forward(req, resp);
+	}
+
+	private void requestJson(HttpServletRequest req, HttpServletResponse resp,
+			List<Relation> listRelation) throws IOException {
+		// TODO Auto-generated method stub
+//		String html = "[";
+//		
+//		for (int i = 0; i < listRelation.size(); i++) {
+//			if(i>0){html+=",";}
+//			html+="{id:'"+listRelation.get(i).getId()+"',name:'"+listRelation.get(i).getName()+"',hobby:'"+
+//					listRelation.get(i).getHobby()+"',level:'"+listRelation.get(i).getLevel()+"',date:'"+listRelation.get(i).getDate()+"'}";
+//		}
+//			
+//		html+="]";
+//		System.out.println(html);
+		Gson gson = new Gson();
+		String html = gson.toJson(listRelation);
+		System.out.println(html);
+		resp.getWriter().print(html);
+	}
+
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {

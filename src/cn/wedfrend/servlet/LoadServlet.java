@@ -90,6 +90,8 @@ public class LoadServlet extends HttpServlet {
 		out.print("<a href='books'><h5>书籍列表</h5></a>");
 		out.print("<a href='upload1.jsp'><h5>上传图片资源</h5></a>");
 		out.print("<a href='download.jsp'><h5>下载资源</h5></a>");
+		out.print("<a href='example.jsp'><h5>EL表达式自定义taglib</h5></a>");
+		out.print("<a href='hobby.jsp'><h5>个人爱好列表</h5></a>");
 //		author(out);
 		out.print("<hr/>");
 		out.print("    This is ");

@@ -41,6 +41,34 @@ public class UserDAO extends BaseDao {
 	}
 
 	/**
+	 * AJAX来进行用户名是否已经注册
+	 * @param name
+	 * @return
+	 */
+	public int getAjaxUserByname(String name){
+		String sql = "select * from user where name=?";
+		ResultSet rs = this.executeQuery(sql, name);
+		System.out.println("rs-------------------"+rs.toString());
+		if (rs != null) {
+			try {
+				if(rs.next()){
+					return 1;
+				}else{
+					return 0;
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} finally {
+				// 关闭流
+				this.colse();
+			}
+		}
+		return 1;// 用户名不存在
+	}
+	
+	
+	/**
 	 * 查询数据：登陆的时候
 	 * 
 	 * @return 0：成功，1：密码错误，2：用户名不存在

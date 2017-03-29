@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!-- 来实现用户注册的方式，使用ajax的异步处理功能 -->
+
+
 <html>
   <head>
     <title>resign.html</title>
@@ -8,20 +11,39 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     
     <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
-
+	<script type="text/javascript" src="js/jquery.1.7.2.min.js"></script>
+	
+  	<script type="text/javascript">
+  	
+		$(function(){
+			$('input[name=UserName]').blur(function(){
+				$.post("resign",{UserName:$(this).val(),op:2},function(data){
+				
+					if('0'==(data)){//可以注册
+						
+						$('input[name=UserName]').css('border','1px solid blue');
+					}else{
+						$('input[name=UserName]').css('border','1px solid red');
+					}
+				});
+			
+			});
+		});
+	</script>  
   </head>
   
   <body>
     resign page <br/><br/>
-    
-    <form action="resign" method="post">
+    <form action="resign" method="post" >
     
     	用户名:
-    <input type="text" name="name"><br/><br/>
+    <input type="text" name="UserName"><br/><br/>
     	密	码:
     <input type="password" name="psw" ><br/><br/>
+    <!-- 隐藏的字段文件 -->
+    <input type="hidden" name="op" value="1"/>
     
-    <input type="submit" value="注册" ><br/>
+    <input type="button" value="注册" id="btn"><br/>
     
     </form>
   </body>

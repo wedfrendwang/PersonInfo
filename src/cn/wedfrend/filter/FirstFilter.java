@@ -41,8 +41,8 @@ public class FirstFilter implements Filter{
 		if(req.getSession().getAttribute("name") == null){
 			//截取
 			String path = req.getRequestURL().substring(req.getRequestURL().lastIndexOf("/")+1);
-			//放过谁
-			if(!("load.jsp".equals(path)||"loads".equals(path)||"resign.html".equals(path)||"resign".equals(path))){
+			//放过谁/jquery.1.7.2.min.js
+			if(!("load.jsp".equals(path)||"loads".equals(path)||"resign.html".equals(path)||"resign.jsp".equals(path)||"resign".equals(path)||"resign1".equals(path)||"jquery.1.7.2.min.js".equals(path))){
 				resp.sendRedirect("load.jsp");
 				return;
 			}

@@ -61,5 +61,10 @@ public class Relation {
 	public void setDate(Date date) {
 		this.date = date;
 	}
+	@Override
+	public String toString() {
+		return "Relation [id=" + id + ", name=" + name + ", hobby=" + hobby
+				+ ", level=" + level + ", date=" + date + "]";
+	}
 
 }

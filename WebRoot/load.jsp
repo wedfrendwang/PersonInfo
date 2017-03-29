@@ -74,6 +74,8 @@
 	</form>
 	<br/>
 	<a href='resign.html'>没有账号！点击注册</a>
+	
+	<a href='resign.jsp'>注册</a>
 	</center>
   </body>
 </html>
