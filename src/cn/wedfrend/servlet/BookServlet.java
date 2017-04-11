@@ -19,6 +19,10 @@ import cn.wedfrend.dao.CategoryDAO;
 import cn.wedfrend.util.PageUtil;
 @WebServlet({"/book","/books"})
 public class BookServlet extends HttpServlet{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private BookDAO bookDAO = new BookDAO();
 	private CategoryDAO categoryDAO = new CategoryDAO();
 	@Override
@@ -129,6 +133,7 @@ public class BookServlet extends HttpServlet{
 		// TODO Auto-generated method stub
 		//既然做了分页处理，那么你的当前页数需要传入进来
 		PageUtil pg = new PageUtil();
+		
 		//设置总共记录数
 		pg.setTotalCount(bookDAO.getAllCount());
 		//这个每个界面显示的个数

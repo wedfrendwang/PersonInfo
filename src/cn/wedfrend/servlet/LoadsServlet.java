@@ -1,6 +1,7 @@
 package cn.wedfrend.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -63,7 +64,26 @@ public class LoadsServlet extends HttpServlet{
 			cookie2.setMaxAge(10*60);
 			resp.addCookie(cookie2);
 			//这些存储完成之后，那么我们现在应该做跳转,这里有一个session的name
-			resp.sendRedirect("load");
+			resp.sendRedirect(resp.encodeRedirectURL("load"));
+			
+			
+//			PrintWriter out = resp.getWriter();
+//			out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
+//			out.println("<HTML>");
+//			out.println("  <HEAD><TITLE>wedfrend introduction</TITLE></HEAD>");
+//			out.println("  <BODY>");
+//			out.print("</p>");
+//			out.print("<hr/>");
+//			out.print("<a href="+resp.encodeURL("load") +"><h5>"+name+" CSDN link</h5></a>");
+//			
+//			out.println("  </BODY>");
+//			out.println("</HTML>");
+//			out.flush();
+//			out.close();
+			
+			
+			
+			System.out.println("-------------------------------");
 			
 		}else{
 			//说明查询数据库失败，那么有可能没有该用户的信息，或者登录名或密码错误

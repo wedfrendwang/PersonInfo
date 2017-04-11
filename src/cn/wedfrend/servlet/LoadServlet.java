@@ -63,6 +63,8 @@ public class LoadServlet extends HttpServlet {
 		//从session中取值
 		HttpSession session = request.getSession();
 		
+		System.out.println(session.isNew());
+		
 		String name = (String)session.getAttribute("name");
 		
 		PrintWriter out = response.getWriter();
