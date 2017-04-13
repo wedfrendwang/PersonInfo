@@ -15,6 +15,17 @@
   <param-name>xiao</param-name>
   <param-value>bo</param-value>
   </context-param>
+  
+  
+  
+  <listener>
+  <listener-class>
+  cn.wedfrend.listener.MyHttpSessionAttributeListener
+  </listener-class>
+  </listener>
+  
+  
+  
   <filter>
   <filter-name>third</filter-name>
   <filter-class>cn.wedfrend.filter.ContextFilter</filter-class>
@@ -43,7 +54,10 @@
   </filter-mapping>
   
   
-  
+  <!-- 这里设置的直接是时间  以分钟为单位-->
+  <session-config>
+  	<session-timeout>13</session-timeout>
+  </session-config>
   
   
   
@@ -75,6 +89,11 @@
     <display-name>This is the display name of my J2EE component</display-name>
     <servlet-name>DeleteServlet</servlet-name>
     <servlet-class>cn.wedfrend.servlet.DeleteServlet</servlet-class>
+    <init-param>
+    <param-name></param-name>
+    <param-value></param-value>
+    </init-param>
+    
   </servlet>
 
 

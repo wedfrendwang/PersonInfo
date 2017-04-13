@@ -56,7 +56,36 @@ public class LoadsServlet extends HttpServlet{
 			HttpSession httpSession = req.getSession();
 			httpSession.setAttribute("name", us.getName());//我们该用户的名字存入session
 			httpSession.setMaxInactiveInterval(10*60);//10分钟之后失效
+			
+			//设置session超时的时间：在DD文件中也可以
+			/**
+			 * <!-- 这里设置的直接是时间  以分钟为单位-->
+				  <session-config>
+				  	<session-timeout>13</session-timeout>
+				  </session-config>
+			 */
+			
 			//写一些数据至cookie
+			
+			/**
+			 * 说说cookie
+			 * 
+			 * cookie 原先设计出来是为了帮助支持回话状态
+			 * 
+			 * 但是也可以使用cookie来进行其他的操作
+			 * 
+			 * 
+			 * 关于会话的迁移：：：：
+			 * 应用的各个部分可以复制在网络中的多个节点上
+			 * 
+			 * 在一个集群环境中，容器可能会完成负载平衡，取得客户的请求，把请求发送到多个JVM上
+			 * 
+			 * 这些JVM可能在同一个物理主机上，可能在不同的物理主机上
+			 * 
+			 */
+			
+			
+			
 			Cookie cookie = new Cookie("name",us.getName());
 			cookie.setMaxAge(10*60);
 			resp.addCookie(cookie);
